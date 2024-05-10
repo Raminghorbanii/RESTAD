@@ -1,0 +1,60 @@
+type: "Transformer"
+
+base_model_type: "Transformer" # This is the type of the model in phase 1
+
+#model configuration
+input_size: ${dataset.x_dim}
+d_model: 32
+d_ff: 128
+n_heads: 8
+
+e_layers: 3
+
+
+#Optimization configuration
+batch_size: 64
+num_epochs: 100
+
+lr: 1e-1
+weight_decay: 1e-1
+dropout: 0
+clip_grad: 1.0
+
+
+
+# Optimized HyperParameters: 
+    # MSL:  d_model = 32
+    #       d_ff = 128
+    #       batch_size = 64
+    #       num_epochs = 100
+    #       lr = 1e-1
+    #       w_d: 1e-1
+    #       dropout: 0.0
+    #       clip_grad: 1
+    
+    
+    
+# Optimized HyperParameters: 
+    # PSM:  d_model = 32
+    #       d_ff = 128
+    #       batch_size = 64
+    #       num_epochs = 100
+    #       lr = 1e-2
+    #       w_d: 0
+    #       dropout: 0
+    #       clip_grad: 1
+    
+
+
+    
+
+# Optimized HyperParameters: 
+    # SMD:  d_model = 32
+    #       d_ff = 128
+    #       batch_size = 64
+    #       num_epochs = 500
+    #       lr = 1e-3
+    #       w_d: 1e-2
+    #       dropout: 0
+    #       clip_grad: 1
+    
