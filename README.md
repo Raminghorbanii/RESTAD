@@ -2,6 +2,10 @@
  
 This repository contains the code and additional resources used in our study. Below are links to more detailed information on the datasets used and the hyperparameters settings.
 
+- [Read the full paper here]()
+
+---
+
 ## Detailed Information
 
 - [Dataset Details](Datasets_info.md): Comprehensive information on the datasets used in our experiments.
