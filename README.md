@@ -28,11 +28,11 @@ conda activate restad_env
 Within the environment, move to this repository directory and install the required Python packages:
 
 ```bash
-cd .../this_repo/RESTAD
+cd .../this_repo/restad
 pip install -r requirements.txt
 ```
 
-### RESTAD directory Structure
+### restad directory Structure
 The codebase includes scripts for setting up the model, loading configurations, training, and evaluation.
 
 - `configs/`: Configuration files for datasets and models.
@@ -54,13 +54,13 @@ The codebase includes scripts for setting up the model, loading configurations, 
 Ensure you have the appropriate computational resources available to run the project. The code was developed and tested on an **NVIDIA GeForce RTX 2080 Ti** GPU. To achieve similar performance and efficiency, it is recommended to use a comparable setup.
 
 ### Data Preparation
-Download the datasets from the provided [Datasets Details](Datasets_info.md) and place them into the `RESTAD/datasets/` directory. Ensure to update the paths in the `configs/dataset/` configuration files accordingly.
+Download the datasets from the provided [Datasets Details](Datasets_info.md) and place them into the `restad/datasets/` directory. Ensure to update the paths in the `configs/dataset/` configuration files accordingly.
 
 ### Configuration
 By default, the system uses the `base_config.yaml` file located in the `configs` directory. Modify this file to select the dataset and the initialization strategy for the RESTAD model. Hyperparameters and model configurations can be adjusted in the corresponding YAML files within the `configs/model/` directory.
 
 ### Running the Project
-To run a provided trained model without undergoing the training process, if you do not have access to the required system specifications or prefer to use pre-trained models for reproducibility, you can load and run a provided trained model, placed at `RESTAD/trained_models/` directory, by using the following command:
+To run a provided trained model without undergoing the training process, if you do not have access to the required system specifications or prefer to use pre-trained models for reproducibility, you can load and run a provided trained model, placed at `restad/trained_models/` directory, by using the following command:
 
 ```bash
 python main.py --load_model True
