@@ -10,33 +10,6 @@ from torch.optim.lr_scheduler import ReduceLROnPlateau
 
 
 
-def rbf_score_regularization_term(rbf_out, reg_factor, eps=1e-10):
-    """
-    Compute the regularization term based on the cumulative RBF layer output.
-    
-    Parameters:
-    - rbf_out (torch.Tensor): The output from the RBF layer.
-    - reg_factor (float): Regularization weight.
-    - eps (float): A small constant to prevent log(0) scenarios.
-
-    Returns:
-    - torch.Tensor: The regularization term.
-    """
-    
-    # Sum the RBF responses over the centers for each data point
-    cumulative_response = torch.mean(rbf_out, dim=-1)
-    
-    # Compute the log of the cumulative response
-    log_response = torch.log(cumulative_response + eps)
-    
-    # Average the log responses across the data points
-    avg_log_response = torch.mean(log_response)
-
-    # Return the negative of the average log response (since we want to maximize it)
-    return -reg_factor * avg_log_response
-
-
-
 class Trainer:
     def __init__(self, model, train_dataloader, test_dataloader, cfg, use_rbf=False, optimizer=None, criterion=None, patience=100, save_path='best_model_early.pth'):
         # Initialize the trainer with the model, data, configuration, and training options
@@ -80,14 +53,6 @@ class Trainer:
                                                
                 # Compute the main loss
                 loss = self.criterion(outputs, inputs)
-
-                # If the RBF layer is used, compute the additional losses
-                if self.use_rbf:
-                    
-                    # Compute the RBF score regularization term
-                    rbfScore_reg_term = rbf_score_regularization_term(rbf_out, self.cfg.model.rbfScore_regFactor)
-                    loss += rbfScore_reg_term
-
                 
                 # Backpropagation and optimization
                 loss.backward()
