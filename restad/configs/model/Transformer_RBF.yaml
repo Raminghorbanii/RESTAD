@@ -20,7 +20,6 @@ weight_decay:  1e-5
 dropout: 0
 clip_grad: 3
 
-rbfScore_regFactor: 0
 
 
 
