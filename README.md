@@ -68,6 +68,9 @@ python main.py --load_model True
 
 This command will skip the training process and use the pre-trained model configurations specified in your setup. To train the model from scratch, simply run:
 
+```
+python main.py 
+``` 
 
 ---
 ## Citation
@@ -81,6 +84,3 @@ If you find our work is useful in your research, please consider raising a star 
   year={2024}
 }
 ```
-python main.py 
-``` 
-
