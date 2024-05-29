@@ -69,6 +69,19 @@ python main.py --load_model True
 This command will skip the training process and use the pre-trained model configurations specified in your setup. To train the model from scratch, simply run:
 
 ```bash
+
+---
+## Citation
+If you find our work is useful in your research, please consider raising a star  :star:  and citing:
+
+```
+@article{ghorbani2024restad,
+  title={RESTAD: REconstruction and Similarity based Transformer for time series Anomaly Detection},
+  author={Ghorbani, Ramin and Reinders, Marcel JT and Tax, David MJ},
+  journal={arXiv preprint arXiv:2405.07509},
+  year={2024}
+}
+```
 python main.py 
 ``` 
 
